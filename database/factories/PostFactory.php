@@ -15,7 +15,7 @@ $factory->define(Post::class, function (Faker $faker) {
         'slug'  => Str::slug($faker->sentence),
         'user_id' => App\User::all()->random()->id,
         'category_id' => App\Category::all()->random()->id,
-        'image' => asset('imagenes/posts/'.$faker->image('public/imagenes/posts',640,480, null, false)),
+        'image' => 'http://localhost:8000/imagenes/posts/'.$faker->image('public/imagenes/posts',640,480, null, false),
 
     ];
 });

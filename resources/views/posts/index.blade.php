@@ -20,7 +20,7 @@
                          <th scope="col">Autor</th>
                          <th scope="col">Portada</th>
                          <th scope="col">Acciones</th>
-                         
+
                        </tr>
                      </thead>
                      <tbody>
@@ -32,27 +32,28 @@
                          <td>{{ $post->user->name }}</td>
                          <td><img src="{{ $post->image }}" width="50" height="50" class="img-fluid"></td>
                          <td class="d-flex" >
-                             
+
                          </div>
                             <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-success mr-2">Editar</a>
+
                              <form action="{{ route('posts.destroy',$post->id) }}" method="POST">
                                                      @csrf
                                                      @method('DELETE')
-                                       
+
                              <button type="submit" class="btn btn-danger  "  onclick="return confirm('Quiere borrar el registro?')" >Eliminar</button>
 
                          </form>
 
                          </td>
-                          
-                       
+
+
                        </tr>
                         @endforeach
-                       
-                     
+
+
                      </tbody>
-                   </table> 
-              
+                   </table>
+
                 </div>
             </div>
         </div>
